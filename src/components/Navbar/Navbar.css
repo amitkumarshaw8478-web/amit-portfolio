@@ -1,0 +1,54 @@
+.navbar {
+  display: flex; /* Aligns children (brand, links, button) in a row */
+  justify-content: space-between; /* Pushes items to the far left, middle, and far right */
+  align-items: center; /* Vertically centers the items */
+  padding: 20px 50px; /* Some spacing around the navbar */
+  background: rgba(11, 12, 16, 0.8); /* Dark background but slightly transparent */
+  backdrop-filter: blur(10px); /* Gives a cool "glass" effect when scrolling */
+  position: sticky; /* Keeps it at the top of the screen... */
+  top: 0; /* ...exactly at the 0 position */
+  z-index: 100; /* Makes sure it always stays above other content */
+}
+
+.navbar-brand {
+  font-size: 1.5rem;
+  font-weight: 800; /* Extra bold */
+  cursor: pointer;
+}
+
+.navbar-brand span {
+  color: var(--accent-color); /* Our neon cyan from index.css */
+}
+
+.navbar-links {
+  display: flex;
+  gap: 30px; /* Space between each list item */
+}
+
+.navbar-links a {
+  font-size: 1rem;
+  font-weight: 600;
+  transition: color 0.3s ease; /* Smooth animation when hovering */
+}
+
+/* When the user hovers over a link, change its color to the accent */
+.navbar-links a:hover {
+  color: var(--accent-color);
+}
+
+.resume-btn {
+  background-color: transparent; /* No background color initially */
+  color: var(--accent-color); /* Cyan text */
+  border: 1px solid var(--accent-color); /* Cyan border */
+  padding: 10px 20px; /* Space inside the button */
+  border-radius: 5px; /* Slightly rounded corners */
+  font-weight: 600;
+  transition: all 0.3s ease; /* Smooth animation when hovered */
+}
+
+/* When the user hovers over the button */
+.resume-btn:hover {
+  background-color: var(--accent-hover); /* Fill it with slightly darker cyan */
+  color: var(--bg-color); /* Text becomes dark so it is readable */
+  border-color: var(--accent-hover);
+}

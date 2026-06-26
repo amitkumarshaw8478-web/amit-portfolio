@@ -1,0 +1,128 @@
+.about-section {
+  padding: 100px 10%;
+  background-color: #12151c; /* Creating a slight subtle contrast from the Hero background */
+}
+
+.about-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.about-content {
+  display: flex;
+  gap: 60px;
+  align-items: center; /* Vertically center the text and the cards */
+  flex-wrap: wrap; /* Allows the layout to stack on mobile */
+  margin-top: 40px;
+}
+
+/* Left Column: Text Profile */
+.about-text {
+  flex: 1; /* Take up half the space */
+  min-width: 300px;
+}
+
+.about-header {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 25px;
+}
+
+.about-profile-img {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--accent-color);
+  box-shadow: 0 0 15px rgba(102, 252, 241, 0.4);
+}
+
+.about-text h3 {
+  font-size: 2.2rem;
+  color: var(--text-primary);
+  font-weight: 700;
+}
+
+.about-text p {
+  color: var(--text-secondary);
+  font-size: 1.15rem;
+  line-height: 1.8;
+  margin-bottom: 25px;
+}
+
+.about-text strong {
+  color: var(--accent-color);
+  font-weight: 600;
+}
+
+.learning-paragraph {
+  border-left: 3px solid var(--accent-color);
+  padding-left: 20px;
+  font-style: italic;
+}
+
+/* Right Column: Highlights Cards */
+.about-highlights {
+  flex: 1; /* Take up the other half of the space */
+  min-width: 300px;
+  display: grid;
+  grid-template-columns: 1fr; /* Stack the highlight cards vertically by default */
+  gap: 20px;
+}
+
+.highlight-card {
+  background-color: var(--card-bg);
+  padding: 25px;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.05); /* Soft glass-like border */
+  border-left: 4px solid var(--accent-color); /* Cool cyan edge on the left */
+}
+
+.highlight-card:hover {
+  transform: translateX(10px); /* Slides slightly to the right on hover */
+  box-shadow: -10px 10px 20px rgba(0, 0, 0, 0.4);
+  background-color: rgba(102, 252, 241, 0.05); /* Slight cyan glow */
+}
+
+.highlight-icon {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.highlight-card h4 {
+  font-size: 1.3rem;
+  color: var(--text-primary);
+  margin-bottom: 8px;
+}
+
+.highlight-card p {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+  .about-section {
+    padding: 80px 5%;
+  }
+  
+  .about-text {
+    text-align: center;
+  }
+  
+  .learning-paragraph {
+    border-left: none;
+    border-top: 3px solid var(--accent-color);
+    padding-left: 0;
+    padding-top: 20px;
+  }
+
+  .highlight-card:hover {
+    transform: translateY(-5px); /* Slide up on mobile instead of right */
+  }
+}

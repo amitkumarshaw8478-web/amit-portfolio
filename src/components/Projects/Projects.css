@@ -1,0 +1,133 @@
+.projects-section {
+  padding: 100px 10%;
+  background-color: #12151c; /* A slightly different shade of dark background to create section separation */
+}
+
+.projects-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* We reuse the general section title styles implicitly, 
+   but we need to make sure we don't accidentally overwrite them if they are scoped */
+/* If section-title is global in index.css, this wouldn't be needed, 
+   but it's safe to define specific rules if needed. We'll rely on the global structure. */
+h2.section-title span {
+  color: var(--accent-color);
+}
+
+.projects-grid {
+  display: grid;
+  /* Auto-responsive grid again: no columns smaller than 320px */
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 40px;
+}
+
+.project-card {
+  background-color: var(--card-bg); /* Dark Gray */
+  border-radius: 12px;
+  overflow: hidden; /* Ensures contents don't spill out of the rounded corners */
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  z-index: 1;
+}
+
+.project-card::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  border-radius: 12px;
+  padding: 2px; /* Border thickness */
+  background: linear-gradient(45deg, transparent, var(--accent-color), transparent);
+  -webkit-mask: 
+     linear-gradient(#fff 0 0) content-box, 
+     linear-gradient(#fff 0 0);
+  mask: 
+     linear-gradient(#fff 0 0) content-box, 
+     linear-gradient(#fff 0 0);
+  -webkit-mask-composite: destination-out;
+  mask-composite: exclude;
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+}
+
+/* On hover, fade in the glowing gradient border */
+.project-card:hover::before {
+  opacity: 1;
+}
+
+.project-content {
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.project-title {
+  font-size: 1.6rem;
+  color: var(--text-primary);
+  margin-bottom: 15px;
+  font-weight: 700;
+}
+
+.project-description {
+  color: var(--text-secondary);
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 30px;
+  flex-grow: 1; /* Pushes the buttons to the bottom of the card */
+}
+
+.project-links {
+  display: flex;
+  gap: 15px;
+}
+
+.btn-demo, .btn-github {
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-align: center;
+  flex: 1; /* Makes both buttons equal width */
+  transition: all 0.3s ease;
+}
+
+/* Cyan background for the Live Demo button */
+.btn-demo {
+  background-color: var(--accent-color);
+  color: var(--bg-color);
+  border: 1px solid var(--accent-color);
+}
+
+.btn-demo:hover {
+  background-color: transparent;
+  color: var(--accent-color);
+}
+
+/* Hollow button for GitHub */
+.btn-github {
+  background-color: transparent;
+  color: var(--text-primary);
+  border: 1px solid var(--text-secondary);
+}
+
+.btn-github:hover {
+  border-color: var(--text-primary);
+  background-color: rgba(255, 255, 255, 0.05); /* Slight white highlight */
+}
+
+/* Mobile responsiveness */
+@media screen and (max-width: 768px) {
+  .projects-section {
+    padding: 80px 5%;
+  }
+}

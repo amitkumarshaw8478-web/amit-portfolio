@@ -1,0 +1,141 @@
+.contact-section {
+  padding: 100px 10%;
+  background-color: var(--bg-color); /* Matches the main theme */
+}
+
+.contact-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.contact-content {
+  display: flex;
+  flex-wrap: wrap; /* Allows stacking on mobile */
+  gap: 50px;
+  align-items: center; /* Vertically center left and right columns */
+}
+
+/* Left Side - Info */
+.contact-info {
+  flex: 1; /* Takes up equal space as the form */
+  min-width: 300px; /* Ensures it doesn't get too slim on tablets */
+}
+
+.contact-info h3 {
+  font-size: 2.2rem;
+  color: var(--text-primary);
+  margin-bottom: 20px;
+}
+
+.contact-description {
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+  margin-bottom: 40px;
+  line-height: 1.8;
+}
+
+.contact-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.action-btn {
+  padding: 15px 25px;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-align: center;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+}
+
+/* Cool glowing call button */
+.call-btn {
+  background: rgba(102, 252, 241, 0.1);
+  color: var(--accent-color);
+  border: 1px solid var(--accent-color);
+}
+
+.call-btn:hover {
+  background: var(--accent-color);
+  color: var(--bg-color);
+  box-shadow: 0 10px 20px rgba(102, 252, 241, 0.3);
+  transform: translateY(-3px);
+}
+
+/* Classic WhatsApp Green */
+.whatsapp-btn {
+  background: #25D366;
+  color: #fff;
+}
+
+.whatsapp-btn:hover {
+  background: #1eb956;
+  box-shadow: 0 10px 20px rgba(37, 211, 102, 0.3);
+  transform: translateY(-3px);
+}
+
+/* Right Side - Form */
+.contact-form {
+  flex: 1;
+  min-width: 300px;
+  background-color: var(--card-bg);
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.05); /* Glass edge feel */
+}
+
+.form-group {
+  margin-bottom: 25px;
+}
+
+.form-input {
+  width: 100%;
+  padding: 15px 20px;
+  background-color: #12151c; /* Deep dark background for inputs */
+  border: 1px solid #2b3846; /* Subtle border */
+  border-radius: 6px;
+  color: var(--text-primary);
+  font-family: inherit; /* Matches your 'Outfit' font */
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: var(--accent-color); /* Turns cyan when typing */
+  background-color: rgba(102, 252, 241, 0.02);
+}
+
+.submit-btn {
+  width: 100%;
+  padding: 15px;
+  background-color: var(--accent-color);
+  color: var(--bg-color);
+  font-size: 1.1rem;
+  font-weight: 700;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.submit-btn:hover {
+  background-color: var(--accent-hover);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(102, 252, 241, 0.3);
+}
+
+/* Responsive constraints */
+@media screen and (max-width: 768px) {
+  .contact-section {
+    padding: 80px 5%;
+  }
+  
+  .contact-form {
+    padding: 30px 20px; /* Slight padding reduction for mobile */
+  }
+}

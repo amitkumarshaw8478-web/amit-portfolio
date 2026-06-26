@@ -1,0 +1,198 @@
+/* Hero Section Container */
+.hero-section {
+  min-height: 100vh;
+  display: flex; /* Flexbox for alignment */
+  align-items: center; /* Vertically center the content */
+  justify-content: flex-start; /* Align content to the left */
+  padding: 0 10%; /* Add padding on the left and right */
+  background: radial-gradient(circle at top right, #1f2833 0%, var(--bg-color) 40%); /* Subtle glowing background effect */
+}
+
+/* Slide up and fade in animation */
+@keyframes slideUpFade {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 50px;
+  animation: slideUpFade 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.hero-content {
+  flex: 1;
+  max-width: 600px;
+}
+
+/* Image Container Styles */
+.hero-image-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-image-wrapper {
+  position: relative;
+  width: 350px;
+  height: 350px;
+  border-radius: 50%;
+  padding: 10px; /* Space for the glowing border */
+  background: linear-gradient(45deg, var(--accent-color), transparent, var(--accent-color));
+  animation: spinGlow 10s linear infinite;
+}
+
+/* This rotates the glowing gradient border slowly around the image */
+@keyframes spinGlow {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* The actual image inside the wrapper */
+.hero-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures the image fills the circle without stretching */
+  border-radius: 50%;
+  background-color: var(--card-bg); /* Fallback background if image is transparent */
+  /* We counteract the spin animation on the parent so the photo stays upright! */
+  animation: counterSpin 10s linear infinite;
+}
+
+@keyframes counterSpin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(-360deg); }
+}
+
+.hero-greeting {
+  color: var(--accent-color); /* Cyan greeting */
+  font-family: 'Courier New', Courier, monospace; /* Monospace font for a "coder" feel */
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.hero-name {
+  font-size: clamp(3rem, 8vw, 5rem); /* Responsive text size (shrinks on small screens) */
+  color: var(--text-primary);
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: 15px;
+}
+
+.hero-roles {
+  font-size: clamp(1.5rem, 4vw, 2.5rem);
+  color: var(--text-secondary);
+  font-weight: 600;
+  margin-bottom: 30px;
+  display: flex;
+  flex-wrap: wrap; /* Allows text to drop to the next line on small screens */
+  gap: 15px;
+  align-items: center;
+}
+
+.dot {
+  color: var(--accent-color);
+  font-size: 1.5rem;
+}
+
+/* Gradient effects for specific roles to make them pop out */
+.role-react {
+  color: #61dafb; /* React default blue */
+}
+
+.role-lic {
+  color: #ff9800; /* Warm orange for finance/advisory */
+}
+
+.hero-description {
+  color: var(--text-secondary);
+  font-size: 1.2rem;
+  max-width: 600px;
+  margin-bottom: 50px;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 20px;
+}
+
+/* Base button styles */
+.btn {
+  padding: 15px 30px;
+  border-radius: 5px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* Primary "Hire Me" button */
+.btn-primary {
+  background-color: transparent;
+  color: var(--accent-color);
+  border: 1px solid var(--accent-color);
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-primary:hover {
+  background-color: rgba(102, 252, 241, 0.1);
+  transform: translateY(-3px); /* Lifts the button up slightly */
+  box-shadow: 0 10px 20px rgba(102, 252, 241, 0.2); /* Creates a cyan glow below */
+}
+
+/* Secondary "View Projects" button */
+.btn-secondary {
+  background-color: var(--card-bg);
+  color: var(--text-primary);
+  border: 1px solid transparent;
+}
+
+.btn-secondary:hover {
+  background-color: #2b3846; /* Slightly lighter gray */
+  transform: translateY(-3px);
+}
+
+/* Responsive adjustments for mobile devices */
+@media screen and (max-width: 768px) {
+  .hero-section {
+    padding: 100px 5% 50px; /* Adjust padding for mobile scrolling */
+  }
+  
+  .hero-container {
+    flex-direction: column-reverse; /* Stack the image on top of the text */
+    text-align: center;
+    gap: 40px;
+  }
+  
+  .hero-roles {
+    justify-content: center; /* Center the roles */
+  }
+
+  .hero-image-wrapper {
+    width: 250px;
+    height: 250px;
+  }
+  
+  .hero-buttons {
+    flex-direction: column; /* Stack buttons vertically on mobile */
+  }
+  
+  .btn {
+    width: 100%; /* Make buttons full width */
+    text-align: center;
+  }
+}

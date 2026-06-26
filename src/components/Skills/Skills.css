@@ -1,0 +1,92 @@
+.skills-section {
+  padding: 100px 10%; /* Add plenty of space top/bottom and match the sides to the hero */
+  background-color: var(--bg-color); /* Our dark theme background */
+}
+
+.skills-container {
+  max-width: 1200px;
+  margin: 0 auto; /* Center the container in the middle of the screen */
+}
+
+.section-title {
+  font-size: 3rem;
+  font-weight: 800;
+  text-align: center;
+  margin-bottom: 50px;
+  color: var(--text-primary);
+}
+
+.section-title span {
+  color: var(--accent-color); /* Emphasize the word "Skills" with cyan */
+}
+
+.skills-grid {
+  display: grid;
+  /* 
+    This is CSS Grid magic! It automatically creates responsive columns.
+    It tells the browser: "Fit as many columns as you can, 
+    but no column should be smaller than 250px."
+  */
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px; /* Space between each grid item */
+}
+
+.skill-card {
+  background-color: var(--card-bg); /* Dark gray background */
+  padding: 40px 30px;
+  border-radius: 12px;
+  text-align: center;
+  position: relative;
+  overflow: hidden; /* Ensures the glowing line doesn't poke out */
+  cursor: default;
+  transition: all 0.3s ease; /* Smooth animation for hover */
+  border: 1px solid rgba(255, 255, 255, 0.05); /* Very subtle border */
+}
+
+.skill-card:hover {
+  transform: translateY(-10px); /* Lifts the card up slightly */
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5); /* Adds a deep shadow below */
+  border-color: rgba(102, 252, 241, 0.3); /* Subtle cyan border on hover */
+}
+
+.skill-name {
+  font-size: 1.8rem;
+  color: var(--text-primary);
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.skill-category {
+  color: var(--text-secondary);
+  font-size: 1rem;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+/* Decorative glowing line at the bottom of the card */
+.skill-bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background-color: var(--accent-color);
+  transform: scaleX(0); /* Hide it by default (scale 0) */
+  transform-origin: left;
+  transition: transform 0.4s ease; /* Smoothly grow it when we hover */
+}
+
+/* When the user hovers over the card, grow the glow line to full width */
+.skill-card:hover .skill-bar {
+  transform: scaleX(1);
+}
+
+/* Responsive constraints */
+@media screen and (max-width: 768px) {
+  .section-title {
+    font-size: 2.5rem; /* Slightly smaller title on mobile */
+  }
+  
+  .skills-section {
+    padding: 80px 5%; /* Less padding on small screens */
+  }
+}

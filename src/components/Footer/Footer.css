@@ -1,0 +1,68 @@
+.footer-section {
+  background-color: #08090b; /* The darkest color to end the page cleanly */
+  padding: 60px 10% 20px; /* Top padding, side padding, bottom padding */
+  border-top: 1px solid rgba(255, 255, 255, 0.05); /* Very faint line above the footer */
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between; /* Brand on left, socials on right */
+  align-items: center;
+  flex-wrap: wrap; /* Allows stacking on mobile */
+  gap: 30px;
+  margin-bottom: 40px;
+}
+
+.footer-brand h2 {
+  font-size: 2rem;
+  color: var(--text-primary);
+  font-weight: 800;
+  margin-bottom: 5px;
+}
+
+.footer-brand h2 span {
+  color: var(--accent-color); /* Cyan dot/text */
+}
+
+.footer-brand p {
+  color: var(--text-secondary);
+  font-size: 1rem;
+}
+
+.footer-socials {
+  display: flex;
+  gap: 20px;
+}
+
+.social-link {
+  color: var(--text-secondary);
+  font-weight: 600;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  padding: 5px 0; /* Makes hover area slightly bigger */
+}
+
+/* Hovering over social logs makes them glow cyan */
+.social-link:hover {
+  color: var(--accent-color);
+  transform: translateY(-2px);
+}
+
+.footer-copyright {
+  text-align: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.05); /* Divider line */
+  padding-top: 20px;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  font-family: 'Courier New', Courier, monospace; /* Coder style */
+}
+
+/* Mobile responsiveness */
+@media screen and (max-width: 768px) {
+  .footer-container {
+    flex-direction: column; /* Stack vertically on small screens */
+    text-align: center;
+  }
+}
