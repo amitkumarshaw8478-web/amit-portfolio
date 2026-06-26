@@ -19,7 +19,7 @@
 /* Left Column: Text Profile */
 .about-text {
   flex: 1; /* Take up half the space */
-  min-width: 300px;
+  min-width: 250px;
 }
 
 .about-header {
@@ -65,7 +65,7 @@
 /* Right Column: Highlights Cards */
 .about-highlights {
   flex: 1; /* Take up the other half of the space */
-  min-width: 300px;
+  min-width: 250px;
   display: grid;
   grid-template-columns: 1fr; /* Stack the highlight cards vertically by default */
   gap: 20px;

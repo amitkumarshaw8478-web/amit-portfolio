@@ -18,8 +18,8 @@ h2.section-title span {
 
 .projects-grid {
   display: grid;
-  /* Auto-responsive grid again: no columns smaller than 320px */
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  /* Auto-responsive grid again: no columns smaller than 280px */
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
   gap: 40px;
 }
 

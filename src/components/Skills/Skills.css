@@ -27,7 +27,7 @@
     It tells the browser: "Fit as many columns as you can, 
     but no column should be smaller than 250px."
   */
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 250px), 1fr));
   gap: 30px; /* Space between each grid item */
 }
 

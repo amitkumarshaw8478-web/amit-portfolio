@@ -18,7 +18,7 @@
 /* Left Side - Info */
 .contact-info {
   flex: 1; /* Takes up equal space as the form */
-  min-width: 300px; /* Ensures it doesn't get too slim on tablets */
+  min-width: 250px; /* Ensures it doesn't get too slim on tablets */
 }
 
 .contact-info h3 {
@@ -80,7 +80,7 @@
 /* Right Side - Form */
 .contact-form {
   flex: 1;
-  min-width: 300px;
+  min-width: 250px;
   background-color: var(--card-bg);
   padding: 40px;
   border-radius: 12px;
